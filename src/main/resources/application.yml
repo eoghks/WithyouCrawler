@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: withYouCrawlerApplication
+  quartz:
+    job-store-type: memory
+    scheduler-name: QuartzScheduler
+
+logging:
+  level:
+    org:
+      quartz: DEBUG
+    com:
+      example:
+        scheduler:
+          CrawlingJob: DEBUG
