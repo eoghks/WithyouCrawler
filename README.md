@@ -33,21 +33,17 @@
 ---
 
 ### 프로젝트 구조
-
-<aside>
-💡
-
+```
 src
 └── main
 ├── java
-│   └── com.example
-│       ├── config          # Quartz 및 Mail 설정
-│       ├── scheduler       # CrawlingJob 구현체
-│       └── service         # EmailService
+│ └── com.example
+│     ├── config # Quartz 및 Mail 설정
+│     ├── scheduler # CrawlingJob 구현체
+│     └── service # EmailService
 └── resources
-├── application.yml     # Spring 및 기타 설정
-
-</aside>
+    └── application.yml # Spring 및 기타 설정
+```
 
 ---
 
