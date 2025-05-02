@@ -1,4 +1,5 @@
 # WithyouCrawler
+![image.png](image/crawler.png)
 ---
 
 ### 주요 기능
@@ -276,7 +277,7 @@ src
 
 ### 네이버 이메일 설정
 
-![image.png](attachment:fb2507f7-ebec-4a46-a784-ca1a603b8b57:image.png)
+![image.jpg](image/smtp%20setting.jpg)
 
 1. 네이버 메일 → 환경 설정 → POP3/IMAP 설정 → IMAP/SMTP 설정으로 이동
 2. IMAP/SMTP 사용 → **사용함** 선택
