@@ -1,6 +1,7 @@
 package com.example.scheduler;
 
 import com.example.service.EmailService;
+import lombok.RequiredArgsConstructor;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
@@ -21,13 +22,13 @@ import java.security.NoSuchAlgorithmException;
 import java.security.cert.X509Certificate;
 
 @Component
+@RequiredArgsConstructor
 public class CrawlingJob extends QuartzJobBean {
     private static final Logger logger = LoggerFactory.getLogger(CrawlingJob.class);
     private static final String TARGET_URL = "https://with-you.kr/day.php?fs_area=&fs_hotel=7&frdate=&todate=&stx=%EC%97%B0%ED%9A%8C";
     private static int lastCount = 0;
 
-    @Autowired
-    private EmailService emailService;
+    private final EmailService emailService;
 
     @Override
     protected void executeInternal(JobExecutionContext context) throws JobExecutionException {
