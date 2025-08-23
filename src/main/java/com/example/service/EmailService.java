@@ -18,11 +18,12 @@ public class EmailService {
     @Value("${mail.userName}")
     private String userName;
 
+    @Value("${mail.receiver}")
+    private String receiver;
+
     private final JavaMailSender mailSender;
     public void multiSend(String subject, String text) {
-        for (EmailEnum email : EmailEnum.values()) {
-            send(subject, text, email.getAddress());
-        }
+            send(subject, text, receiver);
     }
     public void send(String subject, String text, String email) {
         try {

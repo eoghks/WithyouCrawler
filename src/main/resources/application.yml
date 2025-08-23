@@ -18,3 +18,4 @@ logging:
 mail:
   userName: "eoghks8600@naver.com" # 송신자 Email
   password: "Q2R5PU85S8HE" # 네이버 2차 비밀번호
+  receiver: "zhfldk7316@naver.com" # 수신자 Email
