@@ -6,8 +6,7 @@ import jakarta.mail.internet.MimeMessage;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.mail.SimpleMailMessage;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
@@ -16,6 +15,8 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class EmailService {
     private static final Logger logger = LoggerFactory.getLogger(EmailService.class);
+    @Value("${mail.userName}")
+    private String userName;
 
     private final JavaMailSender mailSender;
     public void multiSend(String subject, String text) {
@@ -27,7 +28,7 @@ public class EmailService {
         try {
             MimeMessage message = mailSender.createMimeMessage();
             MimeMessageHelper helper = new MimeMessageHelper(message, true);
-            helper.setFrom("your email");
+            helper.setFrom(userName);
             helper.setTo(email);  // 수신자 이메일
             helper.setSubject(subject);
             helper.setText(text);

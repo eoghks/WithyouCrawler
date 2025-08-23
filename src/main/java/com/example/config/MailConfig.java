@@ -1,5 +1,6 @@
 package com.example.config;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -8,14 +9,19 @@ import java.util.Properties;
 
 @Configuration
 public class MailConfig {
+    @Value("${mail.userName}")
+    private String userName;
+
+    @Value("${mail.password}")
+    private String password;
 
     @Bean
     public JavaMailSender javaMailSender() {
         JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
         mailSender.setHost("smtp.naver.com");
         mailSender.setPort(465);  // 포트 465 또는 587
-        mailSender.setUsername("youremail@naver.com");
-        mailSender.setPassword("yourpassword");  // 네이버 앱 비밀번호
+        mailSender.setUsername(userName);
+        mailSender.setPassword(password);
 
         Properties props = mailSender.getJavaMailProperties();
         props.put("mail.smtp.auth", "true");

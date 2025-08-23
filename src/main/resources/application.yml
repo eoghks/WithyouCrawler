@@ -5,6 +5,7 @@ spring:
     job-store-type: memory
     scheduler-name: QuartzScheduler
 
+
 logging:
   level:
     org:
@@ -13,3 +14,7 @@ logging:
       example:
         scheduler:
           CrawlingJob: DEBUG
+
+mail:
+  userName: "eoghks8600@naver.com" # 송신자 Email
+  password: "Q2R5PU85S8HE" # 네이버 2차 비밀번호
