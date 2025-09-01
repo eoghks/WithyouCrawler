@@ -18,12 +18,12 @@ public class EmailService {
     @Value("${mail.userName}")
     private String userName;
 
-    @Value("${mail.receiver}")
+    @Value("${mail.receiver:default@example.com}")
     private String receiver;
 
     private final JavaMailSender mailSender;
     public void multiSend(String subject, String text) {
-            send(subject, text, receiver);
+        send(subject, text, receiver);
     }
     public void send(String subject, String text, String email) {
         try {
